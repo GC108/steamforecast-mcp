@@ -1,0 +1,51 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "steamforecast-mcp"
+version = "0.1.0"
+description = "Model Context Protocol server for Steam Launch Forecaster — calibrated revenue cones for indie Steam game launches, exposed as MCP tools to Claude / AI agents."
+readme = "README.md"
+license = "MIT"
+authors = [{name = "Greg C.", email = "greg@steamforecast.app"}]
+keywords = ["mcp", "model-context-protocol", "steam", "indie", "gamedev", "boxleiter", "revenue", "forecasting", "claude"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Games/Entertainment",
+    "Topic :: Software Development :: Libraries",
+]
+requires-python = ">=3.10"
+dependencies = [
+    "mcp>=1.0.0",
+    "httpx>=0.27.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+    "pytest-asyncio>=0.23",
+    "respx>=0.21",
+    "ruff>=0.4",
+]
+
+[project.urls]
+Homepage = "https://steamforecast.app"
+Documentation = "https://steamforecast.app/methodology"
+Repository = "https://github.com/GC108/steamforecast-mcp"
+"Calibration Report" = "https://steamforecast.app/reports/calibration-gap-q2-2026"
+
+[project.scripts]
+steamforecast-mcp = "steamforecast_mcp.__main__:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/steamforecast_mcp"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
