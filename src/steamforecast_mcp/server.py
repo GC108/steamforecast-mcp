@@ -1,4 +1,4 @@
-"""MCP server exposing Steam Launch Forecaster tools to AI agents.
+"""MCP server exposing SteamForecast (the Steam launch forecaster) tools to AI agents.
 
 Five tools are registered:
   - get_forecast(appid)       — calibrated P10/P50/P90 revenue cone
@@ -113,8 +113,9 @@ def boxleiter_estimate(review_count: int, price_cents: int) -> dict[str, Any]:
         "multipliers": {"low": BOXLEITER_LOW, "median": BOXLEITER_MEDIAN, "high": BOXLEITER_HIGH},
         "warning": (
             "Heuristic only. ~24% of games are off by >30% per the Boxleiter "
-            "formula's own author. For an empirically-validated cone with "
-            "calibrated 80% coverage per genre, see get_forecast() or "
+            "formula's own author. For a calibrated launch cone (~82% nominal "
+            "coverage, 81-86% realized per wishlist tier on 6,422 held-out "
+            "launches), see get_forecast() or "
             "https://steamforecast.app/methodology"
         ),
     }
