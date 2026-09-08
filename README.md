@@ -4,9 +4,10 @@
 [![PyPI](https://img.shields.io/pypi/v/steamforecast-mcp.svg)](https://pypi.org/project/steamforecast-mcp/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-Model Context Protocol server for [Steam Launch Forecaster][slf]. Exposes
-calibrated revenue cones (P10–P90, empirically validated 80% coverage per
-genre) to Claude, ChatGPT, and any MCP-aware AI agent as tool calls.
+Model Context Protocol server for [SteamForecast][slf], the Steam launch
+revenue forecaster. Exposes calibrated revenue cones (P10–P90; ~82% nominal
+coverage, 81–86% realized per wishlist tier on 6,422 held-out launches) to
+Claude, ChatGPT, and any MCP-aware AI agent as tool calls.
 
 [slf]: https://steamforecast.app
 
@@ -109,7 +110,7 @@ MIT — see [LICENSE](LICENSE).
 
 ## Related
 
-- **[steamforecast.app][slf]** — calibrated revenue cones with empirically-validated 80% coverage per genre.
+- **[SteamForecast][slf]** — calibrated launch revenue cones (~82% nominal coverage, 81–86% realized per wishlist tier on 6,422 held-out launches).
 - **[The Calibration Gap (Q2 2026 report)](https://steamforecast.app/reports/calibration-gap-q2-2026)** — methodology + live coverage evidence.
 - **[steam-page-stats](https://github.com/GC108/steam-page-stats)** — companion OSS Python client for Steam Storefront + Boxleiter rule-of-thumb (no MCP, just a library + CLI).
 - **[Model Context Protocol](https://modelcontextprotocol.io)** — the open standard this server implements.
